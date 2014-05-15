@@ -2,7 +2,7 @@
 /**
  * LDJuiTabs class file
  * 
- * @author Louis DaPrato <l.daprato@gmail.com>
+ * @author Louis A. DaPrato <l.daprato@gmail.com>
  */
 
 Yii::import('zii.widgets.jui.CJuiTabs');
@@ -12,7 +12,7 @@ Yii::import('zii.widgets.jui.CJuiTabs');
  *
  * @property $vertical boolean If true tabs will be laid out vertical, if false the tabs will be horizontal (default).
  * 
- * @author Louis DaPrato <l.daprato@gmail.com>
+ * @author Louis A. DaPrato <l.daprato@gmail.com>
  */
 class LDJuiTabs extends CJuiTabs
 {
