@@ -1,8 +1,12 @@
 <?php
 /**
- * LDJuiTabs class file
- * 
+ * LDJuiTabs class file.
+ *
  * @author Louis A. DaPrato <l.daprato@gmail.com>
+ * @link https://lou-d.com
+ * @copyright 2014 Louis A. DaPrato
+ * @license The MIT License (MIT)
+ * @since 1.0
  */
 
 Yii::import('zii.widgets.jui.CJuiTabs');
