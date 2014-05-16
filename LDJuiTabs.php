@@ -35,7 +35,7 @@ class LDJuiTabs extends CJuiTabs
 	
 	/**
 	 * @var string A php expression that is evaluated for each tab header the result of which is used in place of the header template. 
-	 * 3 variables are provided in the eval'd expression $title (the title of the tab), $content (an array containing the content configuration), $template (string the header template).
+	 * 3 variables are provided in the eval'd expression $title (the title of the tab), $content (an array containing the content configuration), $template (string the standard template).
 	 * If null this expression is ignored and the "headerTemplate" property's value is used instead.
 	 * Defaults to null.
 	 */
@@ -43,7 +43,7 @@ class LDJuiTabs extends CJuiTabs
 	
 	/**
 	 * @var string A php expression that is evaluated for each tab's content the result of which is used in place of the content template. 
-	 * 3 variables are provided in the eval'd expression $title (the title of the tab), $content (an array containing the content configuration), $template (string the content template).
+	 * 3 variables are provided in the eval'd expression $title (the title of the tab), $content (an array containing the content configuration), $template (string the standard template).
 	 * If null this expression is ignored and the "contentTemplate" property's value is used instead.
 	 * Defaults to null.
 	 */
