@@ -12,9 +12,17 @@
 Yii::import('zii.widgets.jui.CJuiTabs');
 
 /**
- * This widget is exactly the same as the {@link CJuiTabs} widget except that the tabs can optionally be laid out vertically. 
+ * This widget is exactly the same as the {@link CJuiTabs} widget, but adds a few new features.
+ * 
+ * 1. The tabs can be laided out vertically or horizontally {@see LDJuiTabs::$vertical}
+ * 	If true tabs will be laid out vertical otherwise they will be horizontal (default).
+ * 2. The header and content templates can be replaced by an evaluated PHP expression {@see LDJuiTabs::$headerTemplateExpression}
+ * 	3 variables are provided in the evaluated expression. $title (the title of the tab), $content (an array containing the content configuration), $template (string the header template).
+ * 	If null the expression is ignored and its respective template property value is used instead.
  *
- * @property $vertical boolean If true tabs will be laid out vertical, if false the tabs will be horizontal (default).
+ * @property boolean $vertical If true tabs will be laid out vertical, if false the tabs will be horizontal (default).
+ * @property string $headerTemplateExpression A php expression that is evaluated for each tab header the result of which is used in place of the header template.
+ * @property string $contentTemplateExpression A php expression that is evaluated for each tab's content the result of which is used in place of the content template.
  * 
  * @author Louis A. DaPrato <l.daprato@gmail.com>
  */
@@ -28,7 +36,7 @@ class LDJuiTabs extends CJuiTabs
 	/**
 	 * @var string A php expression that is evaluated for each tab header the result of which is used in place of the header template. 
 	 * 3 variables are provided in the eval'd expression $title (the title of the tab), $content (an array containing the content configuration), $template (string the header template).
-	 * If null this expression is ignored and the headerTemplate property's value is used instead.
+	 * If null this expression is ignored and the "headerTemplate" property's value is used instead.
 	 * Defaults to null.
 	 */
 	public $headerTemplateExpression;
@@ -36,7 +44,7 @@ class LDJuiTabs extends CJuiTabs
 	/**
 	 * @var string A php expression that is evaluated for each tab's content the result of which is used in place of the content template. 
 	 * 3 variables are provided in the eval'd expression $title (the title of the tab), $content (an array containing the content configuration), $template (string the content template).
-	 * If null this expression is ignored and the headerTemplate property's value is used instead.
+	 * If null this expression is ignored and the "contentTemplate" property's value is used instead.
 	 * Defaults to null.
 	 */
 	public $contentTemplateExpression;
@@ -83,6 +91,11 @@ class LDJuiTabs extends CJuiTabs
 		}
 	}
 	
+	/**
+	 * Renders the tabs for this widget
+	 * 
+	 * @param string $id The ID of the JuiTabs widget
+	 */
 	public function renderTabs($id)
 	{	
 		$tabsOut = "";
